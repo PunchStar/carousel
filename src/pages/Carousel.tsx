@@ -3,7 +3,6 @@ import styled from "styled-components"
 import * as actions from './../actions';
 const useSortableData = (items:any, config:any = null) => {
     const [sortConfig, setSortConfig] = useState(config);
-    
     const sortedItems = React.useMemo(() => {
       let sortableItems = [...items];
       if (sortConfig !== null) {
@@ -30,7 +29,6 @@ const useSortableData = (items:any, config:any = null) => {
     return { items: sortedItems, requestSort };
   }
 export default function Carousel() {
-  const [flag, setFlag] = useState(false);
   const { items, requestSort } = useSortableData(actions.getTableData());
   const [position, setPosition] = useState(0);
     // const changeSlide = (position:number):number =>{
